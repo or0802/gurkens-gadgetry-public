@@ -48,12 +48,12 @@ public class AutoClip extends Command {
 
                 for (int packetNumber = 0; packetNumber < (packetsRequired - 1); packetNumber++) {
                     Packet<?> positionPacket = new VehicleMoveC2SPacket(boat);
-                    ((ClientConnectionAccessor) mc.getNetworkHandler().getConnection())._sendImmediately(positionPacket, null);
+                    ((ClientConnectionAccessor) mc.getNetworkHandler().getConnection())._sendImmediately(positionPacket, null, false);
                 }
 
                 boat.updatePosition(boat.getX(), y, boat.getZ());
                 Packet<?> positionPacket = new VehicleMoveC2SPacket(boat);
-                ((ClientConnectionAccessor) mc.getNetworkHandler().getConnection())._sendImmediately(positionPacket, null);
+                ((ClientConnectionAccessor) mc.getNetworkHandler().getConnection())._sendImmediately(positionPacket, null , false);
 
             } else {
 

@@ -16,6 +16,6 @@ public interface ClientConnectionAccessor {
     Channel getChannel();
 
     @Invoker("sendImmediately")
-    void _sendImmediately(Packet<?> packet, @Nullable PacketCallbacks callbacks);
+    void _sendImmediately(Packet<?> packet, @Nullable PacketCallbacks callbacks, boolean flush);
 }
 

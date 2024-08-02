@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "gurkensgadgetry",
+  "version": "1.3.2",
+  "name": "Gurken's Gadgetry",
+  "description": "A collection of useful modules.",
+  "authors": [
+    "Gurkenwerfer_"
+  ],
+  "contact": {
+    "repo": "https://github.com/stefexec/gurkens-gadgetry"
+  },
+  "icon": "assets/gurk/logo.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "de.gurkenwerfer.toolkit.GurkensGadgetry"
+    ]
+  },
+  "mixins": [
+    "gadgetry.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "0,255,155"
+  },
+  "depends": {
+    "java": ">=17",
+    "minecraft": ">=1.20.4",
+    "meteor-client": "*"
+  }
+}

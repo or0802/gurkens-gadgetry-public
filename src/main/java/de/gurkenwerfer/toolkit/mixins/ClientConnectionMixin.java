@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientConnection.class)
 public abstract class ClientConnectionMixin {
 
-    @Shadow protected abstract void sendImmediately(Packet<?> packet, @Nullable PacketCallbacks callbacks);
+    @Shadow protected abstract void sendImmediately(Packet<?> packet, @Nullable PacketCallbacks callbacks, boolean flush);
 
     @Inject(method = "send(Lnet/minecraft/network/packet/Packet;Lnet/minecraft/network/PacketCallbacks;)V", at = @At("HEAD"), cancellable = true)
     private void onSend(Packet<?> packet, PacketCallbacks callbacks, CallbackInfo info) {
@@ -42,7 +42,7 @@ public abstract class ClientConnectionMixin {
                     );
 
                     info.cancel();
-                    this.sendImmediately(modified, callbacks);
+                    this.sendImmediately(modified, callbacks, false);
 
                 } else if (packet instanceof PlayerMoveC2SPacket.Full move) {
                     PlayerMoveC2SPacket.Full modified = new PlayerMoveC2SPacket.Full(
@@ -56,7 +56,7 @@ public abstract class ClientConnectionMixin {
                     );
 
                     info.cancel();
-                    this.sendImmediately(modified, callbacks);
+                    this.sendImmediately(modified, callbacks, false);
 
                 } else if (packet instanceof VehicleMoveC2SPacket move) {
                     BoatEntity entity = new BoatEntity(EntityType.BOAT, mc.world);
@@ -73,7 +73,7 @@ public abstract class ClientConnectionMixin {
                     VehicleMoveC2SPacket modified = new VehicleMoveC2SPacket(entity);
 
                     info.cancel();
-                    this.sendImmediately(modified, callbacks);
+                    this.sendImmediately(modified, callbacks, false);
                 }
             }
         }

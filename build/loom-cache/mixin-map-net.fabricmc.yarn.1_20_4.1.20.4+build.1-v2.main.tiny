@@ -1,0 +1,2 @@
+v1	named	intermediary
+METHOD	de/gurkenwerfer/toolkit/mixins/ClientConnectionMixin	(Lnet/minecraft/network/packet/Packet;Lnet/minecraft/network/PacketCallbacks;Z)V	sendImmediately	method_10764

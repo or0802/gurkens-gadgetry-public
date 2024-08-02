@@ -1,0 +1,28 @@
+{
+  "mappings": {
+    "de/gurkenwerfer/toolkit/mixins/ClientConnectionAccessor": {
+      "channel": "field_11651:Lio/netty/channel/Channel;",
+      "sendImmediately": "method_10764(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;Z)V"
+    },
+    "de/gurkenwerfer/toolkit/mixins/ClientConnectionMixin": {
+      "send(Lnet/minecraft/network/packet/Packet;Lnet/minecraft/network/PacketCallbacks;)V": "Lnet/minecraft/class_2535;method_10752(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;)V"
+    },
+    "de/gurkenwerfer/toolkit/mixins/ClientPlayNetworkHandlerMixin": {
+      "onGameStateChange": "Lnet/minecraft/class_634;method_11085(Lnet/minecraft/class_2668;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "de/gurkenwerfer/toolkit/mixins/ClientConnectionAccessor": {
+        "channel": "field_11651:Lio/netty/channel/Channel;",
+        "sendImmediately": "method_10764(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;Z)V"
+      },
+      "de/gurkenwerfer/toolkit/mixins/ClientConnectionMixin": {
+        "send(Lnet/minecraft/network/packet/Packet;Lnet/minecraft/network/PacketCallbacks;)V": "Lnet/minecraft/class_2535;method_10752(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;)V"
+      },
+      "de/gurkenwerfer/toolkit/mixins/ClientPlayNetworkHandlerMixin": {
+        "onGameStateChange": "Lnet/minecraft/class_634;method_11085(Lnet/minecraft/class_2668;)V"
+      }
+    }
+  }
+}
